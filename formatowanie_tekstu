@@ -1,0 +1,45 @@
+# https://youtu.be/DxrCwiErBG4
+
+# more formatting: https://docs.python.org/3/tutorial/inputoutput.html
+
+# formatowanie tekstu
+
+liczba_mala = 3
+liczba_srednia = 33
+liczba_duza = 333
+
+print('wyjustowana liczba mala, srednia i duza\n %3s \n %3s \n %3s' %(liczba_mala, liczba_srednia, liczba_duza))
+
+rok = 2018
+print('teraz jest {} rok.'.format(rok))
+
+rok = 2018
+print('teraz jest znow {rok} rok.'.format(rok = rok))
+
+rok_2000 = 2000
+rok_2018 = 2018
+print('Byly tez lata {0} oraz {1}.'.format(rok_2000, rok_2018))
+
+print('')
+
+# python 3.6
+
+rok = 2019
+print(f'bedzie {rok} rok.')
+
+print('')
+
+# miejsca po przecinku
+
+liczba = 3.14151234567890
+print(f'{liczba:.4f}')
+
+liczba = 3
+print(f'{liczba:.4f}')
+
+napis = 'napis'
+print(f'{napis:_^20}')  # wysrodkowanie ze znakiem '_'
+
+print('')
+
+# koniec
