@@ -1,0 +1,24 @@
+# klasy: https://youtu.be/kWqozmpvlis
+
+class moja_klasa():
+    zmienna = 11
+
+    def __init__(self, liczba):
+        self.liczba = liczba
+
+
+obj1 = moja_klasa(3)
+obj2 = moja_klasa(7)
+print(obj1.zmienna)
+print(obj2.zmienna)
+
+moja_klasa.zmienna = 77
+print(obj1.zmienna)
+print(obj2.zmienna)
+
+obj1.zmienna = 33
+obj2.zmienna = 44
+print(obj1.zmienna)
+print(obj2.zmienna)
+
+# koniec
