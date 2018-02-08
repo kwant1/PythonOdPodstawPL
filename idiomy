@@ -1,0 +1,79 @@
+# https://youtu.be/VHdrUkmdJzM
+
+# idiomy = zwarty zapis czesto uzywanego kodu
+
+a = 3
+b = 7
+print(a, b)
+
+a, b = b, a
+print(a, b)
+
+a, b, c = 1, 2, 3
+print(a, b, c)
+print('')
+
+
+lista = [1,2,3,4,5]
+print(lista)
+a,b,*c = lista  # dziala jak *args, wylapuje nadmiarowe wartosci
+print(a,b,c)
+*c, a,b = lista  # dziala jak *args, wylapuje nadmiarowe wartosci
+print(a,b,c)
+a,*c, b = lista  # dziala jak *args, wylapuje nadmiarowe wartosci
+print(a,b,c)
+a,*c, b, d, e, f = lista  # dziala jak *args, wylapuje nadmiarowe wartosci
+print(a,b,c, d, e, f)  # c jest [], bo przechwytuje tylko nadmiarowe elementy
+print('')
+
+
+lista2 = [(1,2), ('Ala', 'kot')]
+for i1, i2 in lista2:
+    print(i1, '->', i2)
+else:
+    print('koniec')
+print('')
+
+# uzycie funkcji zip
+imiona = ['Xueping', 'Hania', 'Baby', 'Tomek', 'Jens']
+zwierzeta = ['tygrys', 'kon', 'pies', 'kogut']  # iteracji tyle, co elementow najkrotszej listy
+for i1, i2 in zip(imiona, zwierzeta):
+    print(i1, i2)
+print('')
+
+
+liczby = [1,2,3,4,5]
+kwadraty = [x*x for x in liczby]  # definicja elementu wynikowej listy \
+                                  #  petla for wyluskujaca z pierwotnej listy
+print(kwadraty)
+
+liczby = [1,2,3,4,5]
+kwadraty = [x*x for x in liczby if x%5 == 0]  # z warunkiem
+print(kwadraty)
+print('')
+
+# leniwa ewaluacja:
+# jesli ewaluowane wyrazenie logiczne, to nie jest pewne, czy dalsze wyrazenie (po 'or') zostanie przeanalizowane
+# nie zostanie, jesli prawda po lewej stronie
+
+# dzialanie 'or':
+# jesli ktorakolwiek wartosc jest prawdziwa, to cale wyraznie jest prawdziwe
+# ale jesli falsz po lewej, to zawsze zwraca prawa, nawet jesli tam tez jest falsz!
+
+status = False
+print(status or 'a')
+
+status = True
+print(status or 'a')
+
+def test():
+    print('czesc')
+    return True
+
+status = False
+print(status or test())
+
+status = True
+print(status or test())  # zwraza True, a funkcja test nie jest wcale uruchamiana!
+
+#koniec
