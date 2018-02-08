@@ -1,0 +1,49 @@
+# https://youtu.be/Hq5NXFMQiPU
+
+def moja_funkcja(liczba, kolor=' indygo'):  # kolor = 'indygo' to wartosc domyslna
+    print(liczba * kolor)
+
+
+moja_funkcja(2)  # pierwszy parametr podany, drugi domyslny
+print('')
+moja_funkcja(2, ' zielony')  # oba parametry podane
+print('')
+
+
+# przechwytywanie nadmiarowych parametrow
+
+
+def moja_funkcja(liczba, kolor=' bialy', *args, **kwargs):  # parametry przekazane przez wartosc do *args, \
+                                                            # przekazane przez nazwe w *kwarg
+    print(liczba * kolor)
+    print('*args: ', args)
+    print('**kwargs: ', kwargs)
+
+
+moja_funkcja(2, ' zolty', 3, 9, wyraz='czesc', napis='hej')  # 7 i 9 do *args
+print('')
+
+# *args jako ogranicznik
+
+def moja_funkcja(liczba, *args, kolor=' bialy', **kwargs):  # paramtery za *args przekazane \
+                                                            # tylko przez nazwe \
+                                                            # kiedy przez wartosc, to ida do *args
+    print(liczba * kolor)
+    print('*args: ', args)
+    print('**kwargs: ', kwargs)
+
+moja_funkcja(2, ' zolty', 3, 9, wyraz='czesc', napis='hej')  # 7 i 9 do *args
+print('')
+
+
+# funkcja bez parametrow
+def drukuj():
+    print('funkcja co drukuje')
+
+
+drukuj()
+print('')
+
+# koniec
+
+
