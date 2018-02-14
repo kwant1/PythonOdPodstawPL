@@ -1,0 +1,25 @@
+# https://youtu.be/7bENtEg6StU
+
+# UZYCIE DEKORATORA
+
+
+def memo(f):
+    cache = {}  # zapamietuje poprzednie wartosci wywolan funkcji 'fib'
+    def pomocnik(x):
+        if x not in cache:
+            print('zapamietuje wartosc')
+            cache[x] = f(x)
+        return cache[x]
+    return pomocnik
+
+
+@memo
+def fib(n):
+    if n in (0,1):
+        return n
+    else:
+        return fib(n-1) + fib(n-2)
+
+print(fib(10))  # dziesiaty wyraz ciagu Fibonacciego
+
+# koniec
