@@ -1,0 +1,21 @@
+# https://youtu.be/JD4aRgfLBCI
+
+# DEKORATORY
+
+
+def czwarta(f):
+    def wewn(*args, **kwargs):
+        print('jestem funkcja wewnetrzna')
+        wynik = f(*args, **kwargs)
+        return wynik**2
+    return wewn
+
+
+@czwarta  # rownowazne z: pierwsza = czwarta(pierwsza)
+def pierwsza(n):
+    return n * 4
+
+
+print(pierwsza(5))  # wartosc
+
+# koniec
