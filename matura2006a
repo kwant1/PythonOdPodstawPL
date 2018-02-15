@@ -1,0 +1,40 @@
+# https://youtu.be/NPiRf9GGT6Q
+
+# zliczanie wystepowania wyrazow
+
+word_count = {}  # slownik
+
+evens = 0
+palindroms = 0
+
+with open('dane.txt', 'r') as data:  # 'with' -> nie trzeba zamknac pliku po wykorzystaniu
+    for line in data:                # dla kazdej lini z pliku 'data'
+        word = line.strip()          # usuwa biale znaki / znak konca lini z poczatku i konca lini
+        if word in word_count.keys():
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+        if word[-1] in ['A', 'C', 'E']:
+            evens += 1
+        if word == word[::-1]:
+            palindroms += 1
+
+more_than_once = 0
+most_times = 0
+best_word = ''
+
+for word, count in word_count.items():
+    if count > 1:
+        more_than_once += 1
+    if count > most_times:
+        best_word = word
+        most_times = count
+
+
+print('liczba wyraz wystepujacych wiecej niz raz', more_than_once)
+print('najczesciej wystepuje wyraz', best_word)
+print('wyraz ten wystepuje', most_times, 'razy')
+print('liczb parzystych jest', evens)
+print('liczb palindromow', palindroms)
+
+# koniec
