@@ -1,0 +1,26 @@
+# https://youtu.be/yD_I4YV4TRE
+
+# zliczanie wystepowania wyrazow -> MORE PYTHONIC, WITH IDIOMS
+
+from collections import Counter
+
+with open('dane.txt', 'r') as data:  # 'with' -> nie trzeba zamknac pliku po wykorzystaniu
+    words = [word.strip() for word in data]
+    evens = sum(1 for word in words if word[-1] in 'ACE')  # suma z generatora, ktory generuje '1' za kazdym razem,
+                                                           # kiedy na liscie slow 'words' napotka slowo 'word',
+                                                           # ktorego ostatni znak 'word[-1] zawiera sie w napisie 'ACE'
+    palindrom_count = sum(1 for word in words if word == word[::-1])  # 'sum' zliczy wszystkie '1' generowane przez generator,
+                                                                      # za kazdym razem kiedy napotka slowo na liscie slow
+                                                                      # takie ze slowo jest palindormem 'word == word[::-1]'
+    # palindrom_count = len([1 for word in words if word == word[::-1]])
+    words_counter = Counter(words)
+    more_than_once = sum(1 for word, count in words_counter.items() if count > 1)
+    best_word, most_common = words_counter.most_common(1)[0]  # '(1)' -> ile najczesciej wystepujacych wyrazow, zwraca: [('slowo', liczba_wystapien)]
+
+print('liczba wyraz wystepujacych wiecej niz raz', more_than_once)
+print('najczesciej wystepuje wyraz', best_word)
+print('wyraz ten wystepuje', most_common, 'razy')
+print('liczb parzystych jest', evens)
+print('liczb palindromow', palindrom_count)
+
+# koniec
